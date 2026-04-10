@@ -23,6 +23,7 @@
   <main class="container login-page">
     <section class="login-card">
       <h2>Student Sign In</h2>
+      <div id="errorMessage" class="error-message" style="display: none;"></div>
       <form id="studentLoginForm" action="#" method="post">
         <label for="admission">Admission Number</label>
         <input type="text" id="admission" name="admission" placeholder="PGR2026-001" required>
@@ -49,8 +50,43 @@
   </footer>
 
   <script>
+    const validateEmail = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+
+    const validatePhone = (phone) => {
+      const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
+      return phoneRegex.test(phone.replace(/\s/g, ''));
+    };
+
     document.getElementById('studentLoginForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const errorDiv = document.getElementById('errorMessage');
+      
+      // Reset error message
+      errorDiv.style.display = 'none';
+      errorDiv.textContent = '';
+      
+      let errors = [];
+      
+      if (!validateEmail(email)) {
+        errors.push('Invalid email address. Please enter a valid email (e.g., you@example.edu)');
+      }
+      
+      if (!validatePhone(phone)) {
+        errors.push('Invalid phone number. Please enter a valid phone number (e.g., +254 700 000 000)');
+      }
+      
+      if (errors.length > 0) {
+        errorDiv.textContent = errors.join(' • ');
+        errorDiv.style.display = 'block';
+        return;
+      }
+      
       window.location.href = 'student-dashboard.html';
     });
   </script>

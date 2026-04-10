@@ -42,15 +42,20 @@
         <label for="supervisor">Preferred Supervisor</label>
         <select id="supervisor" name="supervisor" required>
           <option value="">Choose a supervisor</option>
-          <option>Professor Okello — Dean</option>
-          <option>Dr. Prisca Magotu — Chair of Department</option>
-          <option>Prof. Miner Titus</option>
-          <option>Dr. Joseph Nyakinda</option>
-          <option>Dr. Willy Kangogo — Coordinator</option>
-          <option>Dr. Julius Owino</option>
-          <option>Dr. Francis Akwenda Odhiambo — Director BPS</option>
-          <option>Any Other</option>
+          <option value="Professor Okello">Professor Okello — Dean</option>
+          <option value="Dr. Prisca Magotu">Dr. Prisca Magotu — Chair of Department</option>
+          <option value="Prof. Miner Titus">Prof. Miner Titus</option>
+          <option value="Dr. Joseph Nyakinda">Dr. Joseph Nyakinda</option>
+          <option value="Dr. Willy Kangogo">Dr. Willy Kangogo — Coordinator</option>
+          <option value="Dr. Julius Owino">Dr. Julius Owino</option>
+          <option value="Dr. Francis Akwenda Odhiambo">Dr. Francis Akwenda Odhiambo — Director BPS</option>
+          <option value="other">Enter Supervisor Name</option>
         </select>
+
+        <div id="customSupervisorDiv" style="display: none; margin-top: 10px;">
+          <label for="customSupervisor">Enter Supervisor Name</label>
+          <input type="text" id="customSupervisor" name="customSupervisor" placeholder="e.g., Dr. John Smith">
+        </div>
 
         <button type="submit" class="button">Save Profile</button>
       </form>
@@ -59,8 +64,34 @@
   </main>
 
   <script>
+    const supervisorSelect = document.getElementById('supervisor');
+    const customSupervisorDiv = document.getElementById('customSupervisorDiv');
+    const customSupervisorInput = document.getElementById('customSupervisor');
+
+    // Show/hide custom supervisor input based on selection
+    supervisorSelect.addEventListener('change', function() {
+      if (this.value === 'other') {
+        customSupervisorDiv.style.display = 'block';
+        customSupervisorInput.required = true;
+      } else {
+        customSupervisorDiv.style.display = 'none';
+        customSupervisorInput.required = false;
+        customSupervisorInput.value = '';
+      }
+    });
+
     document.getElementById('profileForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      // If custom supervisor is selected, use the custom input value
+      if (supervisorSelect.value === 'other') {
+        if (!customSupervisorInput.value.trim()) {
+          alert('Please enter a supervisor name');
+          return;
+        }
+        supervisorSelect.value = customSupervisorInput.value;
+      }
+      
       window.location.href = 'student-dashboard.html';
     });
   </script>

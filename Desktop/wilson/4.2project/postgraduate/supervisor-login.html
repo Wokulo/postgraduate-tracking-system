@@ -22,6 +22,7 @@
   <main class="container login-page">
     <section class="login-card">
       <h2>Supervisor Sign In</h2>
+      <div id="errorMessage" class="error-message" style="display: none;"></div>
       <form id="supervisorLoginForm" action="#" method="post">
         <label for="supervisorEmail">Email Address</label>
         <input type="email" id="supervisorEmail" name="supervisorEmail" placeholder="supervisor@example.edu" required>
@@ -45,8 +46,43 @@
   </footer>
 
   <script>
+    const validateEmail = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+
+    const validatePhone = (phone) => {
+      const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
+      return phoneRegex.test(phone.replace(/\s/g, ''));
+    };
+
     document.getElementById('supervisorLoginForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      const email = document.getElementById('supervisorEmail').value.trim();
+      const phone = document.getElementById('supervisorPhone').value.trim();
+      const errorDiv = document.getElementById('errorMessage');
+      
+      // Reset error message
+      errorDiv.style.display = 'none';
+      errorDiv.textContent = '';
+      
+      let errors = [];
+      
+      if (!validateEmail(email)) {
+        errors.push('Invalid email address. Please enter a valid email (e.g., supervisor@example.edu)');
+      }
+      
+      if (!validatePhone(phone)) {
+        errors.push('Invalid phone number. Please enter a valid phone number (e.g., +254 700 000 000)');
+      }
+      
+      if (errors.length > 0) {
+        errorDiv.textContent = errors.join(' • ');
+        errorDiv.style.display = 'block';
+        return;
+      }
+      
       window.location.href = 'supervisor-dashboard.html';
     });
   </script>
