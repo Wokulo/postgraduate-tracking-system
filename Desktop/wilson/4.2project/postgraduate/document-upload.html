@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Upload | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Document Upload</h1>
+        <p>Upload required documents for supervisor approval and stage progression.</p>
+      </div>
+      <nav>
+        <a href="student-dashboard.html" class="button button-secondary">Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-copy" style="padding-top: 2rem;">
+      <div class="stage-panel">
+        <h2>Current Stage: Proposal</h2>
+        <p>Complete all required uploads before requesting supervisor approval.</p>
+      </div>
+    </section>
+
+    <section class="upload-requirements">
+      <h3>Required Documents for Proposal Stage</h3>
+      <div class="requirements-grid">
+        <div class="requirement-card">
+          <div class="requirement-status uploaded">✓</div>
+          <h4>Minutes of Presentation</h4>
+          <p>Official document recording presentation proceedings</p>
+          <span class="requirement-tag">PDF, DOC, DOCX</span>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-status pending">!</div>
+          <h4>Fee Statement Balance</h4>
+          <p>Official university-issued fee payment confirmation</p>
+          <span class="requirement-tag">PDF only</span>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-status pending">!</div>
+          <h4>Proposal Document</h4>
+          <p>Complete research proposal with objectives and methodology</p>
+          <span class="requirement-tag">PDF, DOC, DOCX</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="upload-section">
+      <h3>Upload Documents</h3>
+      <form id="uploadForm" class="upload-form">
+        <div class="form-group">
+          <label for="docType">Select Document Type</label>
+          <select id="docType" name="docType" required>
+            <option value="">Choose a document type</option>
+            <option>Minutes of Presentation</option>
+            <option>Fee Statement Balance</option>
+            <option>Proposal Document</option>
+            <option>Academic Transcript</option>
+            <option>Thesis Document</option>
+            <option>Intent to Submit Form</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fileUpload">Choose File</label>
+          <div class="file-upload-area" id="fileUploadArea">
+            <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx" required>
+            <p>Drag and drop your file here or click to browse</p>
+            <p class="file-hint">Accepted formats: PDF, DOC, DOCX (Max 10MB)</p>
+          </div>
+          <div id="fileName" class="file-name"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="uploadNotes">Notes (Optional)</label>
+          <textarea id="uploadNotes" name="uploadNotes" placeholder="Add any notes about this document submission" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="button" id="submitBtn">Upload Document</button>
+      </form>
+    </section>
+
+    <section class="uploaded-documents">
+      <h3>Previously Uploaded Documents</h3>
+      <div class="documents-table">
+        <div class="table-header">
+          <div class="col-name">Document</div>
+          <div class="col-date">Upload Date</div>
+          <div class="col-status">Status</div>
+          <div class="col-action">Action</div>
+        </div>
+
+        <div class="table-row">
+          <div class="col-name">
+            <span class="doc-icon">📄</span>
+            <div>
+              <p class="doc-title">Minutes of Presentation</p>
+              <p class="doc-filename">Presentation_Minutes_April2026.pdf</p>
+            </div>
+          </div>
+          <div class="col-date">April 10, 2026</div>
+          <div class="col-status">
+            <span class="status-badge approved">Approved by Supervisor</span>
+          </div>
+          <div class="col-action">
+            <a href="#" class="button button-small">Download</a>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="col-name">
+            <span class="doc-icon">📄</span>
+            <div>
+              <p class="doc-title">Academic Transcript</p>
+              <p class="doc-filename">Academic_Transcript_2023-2026.pdf</p>
+            </div>
+          </div>
+          <div class="col-date">March 28, 2026</div>
+          <div class="col-status">
+            <span class="status-badge verified">Verified</span>
+          </div>
+          <div class="col-action">
+            <a href="#" class="button button-small">Download</a>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="col-name">
+            <span class="doc-icon">📄</span>
+            <div>
+              <p class="doc-title">Fee Statement Balance</p>
+              <p class="doc-filename">Fee_Statement_Concept_Stage.pdf</p>
+            </div>
+          </div>
+          <div class="col-date">March 15, 2026</div>
+          <div class="col-status">
+            <span class="status-badge pending">Pending Review</span>
+          </div>
+          <div class="col-action">
+            <a href="#" class="button button-small">Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    const fileUploadArea = document.getElementById('fileUploadArea');
+    const fileUpload = document.getElementById('fileUpload');
+    const fileName = document.getElementById('fileName');
+    const uploadForm = document.getElementById('uploadForm');
+
+    // Drag and drop
+    fileUploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileUploadArea.style.borderColor = 'var(--primary)';
+      fileUploadArea.style.background = 'rgba(27, 75, 116, 0.05)';
+    });
+
+    fileUploadArea.addEventListener('dragleave', () => {
+      fileUploadArea.style.borderColor = 'var(--border)';
+      fileUploadArea.style.background = 'transparent';
+    });
+
+    fileUploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileUploadArea.style.borderColor = 'var(--border)';
+      fileUploadArea.style.background = 'transparent';
+      
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileUpload.files = files;
+        updateFileName();
+      }
+    });
+
+    fileUpload.addEventListener('change', updateFileName);
+
+    function updateFileName() {
+      if (fileUpload.files.length > 0) {
+        const file = fileUpload.files[0];
+        fileName.textContent = `Selected: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      }
+    }
+
+    uploadForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Document uploaded successfully! (Backend integration needed)');
+      uploadForm.reset();
+      fileName.textContent = '';
+    });
+  </script>
+</body>
+</html>
