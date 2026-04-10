@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Calendar | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Activity Calendar</h1>
+        <p>Track your planned activities, meetings, and stage milestones for the current stage.</p>
+      </div>
+      <nav>
+        <a href="student-dashboard.html" class="button button-secondary">Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-copy" style="padding-top: 2rem;">
+      <div class="stage-panel">
+        <h2>Current Stage</h2>
+        <div class="stage-pill stage-active">Proposal Stage</div>
+        <p>All planned activities must be completed and marked as done before supervisor approval.</p>
+      </div>
+    </section>
+
+    <section class="calendar-controls">
+      <button class="button button-secondary" id="addActivityBtn">+ Add New Activity</button>
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterActivities('all')">All</button>
+        <button class="filter-btn" onclick="filterActivities('upcoming')">Upcoming</button>
+        <button class="filter-btn" onclick="filterActivities('completed')">Completed</button>
+      </div>
+    </section>
+
+    <section class="activities-container">
+      <h3>Upcoming Activities</h3>
+      <div class="activities-list">
+        <div class="activity-card">
+          <div class="activity-status pending">Pending</div>
+          <div class="activity-content">
+            <h4>Literature Review Meeting</h4>
+            <p class="activity-date">📅 April 15, 2026 at 2:00 PM</p>
+            <p class="activity-desc">Review current literature with supervisor and discuss findings.</p>
+            <span class="activity-type">Meeting with Supervisor</span>
+          </div>
+          <button class="button button-small">Mark Done</button>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-status pending">Pending</div>
+          <div class="activity-content">
+            <h4>Submit Draft Proposal</h4>
+            <p class="activity-date">📅 April 18, 2026 at 5:00 PM</p>
+            <p class="activity-desc">Submit the first draft of the complete research proposal.</p>
+            <span class="activity-type">Submission Deadline</span>
+          </div>
+          <button class="button button-small">Mark Done</button>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-status pending">Pending</div>
+          <div class="activity-content">
+            <h4>Research Methodology Review</h4>
+            <p class="activity-date">📅 April 22, 2026 at 10:00 AM</p>
+            <p class="activity-desc">Present research methodology and validate approach.</p>
+            <span class="activity-type">Presentation</span>
+          </div>
+          <button class="button button-small">Mark Done</button>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2.5rem;">Completed Activities</h3>
+      <div class="activities-list">
+        <div class="activity-card completed">
+          <div class="activity-status done">✓ Completed</div>
+          <div class="activity-content">
+            <h4>Concept Paper Submission</h4>
+            <p class="activity-date">📅 March 28, 2026 at 4:00 PM</p>
+            <p class="activity-desc">Submitted concept paper outlining research problem and objectives.</p>
+            <span class="activity-type">Submission</span>
+          </div>
+        </div>
+
+        <div class="activity-card completed">
+          <div class="activity-status done">✓ Completed</div>
+          <div class="activity-content">
+            <h4>Initial Feedback Meeting</h4>
+            <p class="activity-date">📅 April 1, 2026 at 9:00 AM</p>
+            <p class="activity-desc">Received initial feedback on concept paper from supervisor.</p>
+            <span class="activity-type">Meeting</span>
+          </div>
+        </div>
+
+        <div class="activity-card completed">
+          <div class="activity-status done">✓ Completed</div>
+          <div class="activity-content">
+            <h4>Literature Search Strategy</h4>
+            <p class="activity-date">📅 April 8, 2026 at 3:00 PM</p>
+            <p class="activity-desc">Completed literature search strategy and identified key sources.</p>
+            <span class="activity-type">Research Task</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-activity-form" id="addActivityForm" style="display: none;">
+      <h3>Add New Activity</h3>
+      <form id="activityForm">
+        <label for="activityTitle">Activity Title</label>
+        <input type="text" id="activityTitle" name="activityTitle" placeholder="e.g. Literature Review Meeting" required>
+
+        <label for="activityDate">Date and Time</label>
+        <input type="datetime-local" id="activityDate" name="activityDate" required>
+
+        <label for="activityDesc">Description</label>
+        <textarea id="activityDesc" name="activityDesc" placeholder="What will you do in this activity?" required></textarea>
+
+        <label for="activityType">Activity Type</label>
+        <select id="activityType" name="activityType" required>
+          <option value="">Select type</option>
+          <option>Meeting with Supervisor</option>
+          <option>Submission Deadline</option>
+          <option>Presentation</option>
+          <option>Research Task</option>
+          <option>Other</option>
+        </select>
+
+        <div class="form-actions">
+          <button type="submit" class="button">Save Activity</button>
+          <button type="button" class="button button-secondary" onclick="cancelAddActivity()">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('addActivityBtn').addEventListener('click', function() {
+      document.getElementById('addActivityForm').style.display = 'block';
+    });
+
+    function cancelAddActivity() {
+      document.getElementById('addActivityForm').style.display = 'none';
+      document.getElementById('activityForm').reset();
+    }
+
+    document.getElementById('activityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Activity saved! (Backend integration needed)');
+      cancelAddActivity();
+    });
+
+    function filterActivities(type) {
+      // Update active filter button
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter logic would go here
+      console.log('Filter by:', type);
+    }
+  </script>
+</body>
+</html>

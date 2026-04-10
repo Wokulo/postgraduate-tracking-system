@@ -280,6 +280,156 @@ textarea:focus {
   color: #905700;
 }
 
+select {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  font-size: 1rem;
+  color: #17243e;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(47, 107, 152, 0.12);
+}
+
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.activities-container {
+  padding: 2rem 0;
+}
+
+.activities-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.activity-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(17, 52, 86, 0.05);
+}
+
+.activity-card.completed {
+  opacity: 0.75;
+  background: #fafbfc;
+}
+
+.activity-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.activity-status.pending {
+  background: #fff4e6;
+  color: #905700;
+}
+
+.activity-status.done {
+  background: #e6f5e6;
+  color: #2d5c2d;
+}
+
+.activity-content h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.activity-date {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.activity-desc {
+  margin: 0 0 0.75rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.activity-type {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: #f0f5fb;
+  color: var(--primary);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.button-small {
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+}
+
+.add-activity-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.add-activity-form h3 {
+  margin-top: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-actions .button {
+  flex: 1;
+}
+
 .note {
   margin-top: 1.25rem;
   color: var(--muted);
