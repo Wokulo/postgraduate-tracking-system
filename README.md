@@ -1,4 +1,4 @@
-﻿# Student Tracking System
+# Student Tracking System
 
 Full-stack student tracking app with:
 - Backend: Node.js + Express + PostgreSQL
