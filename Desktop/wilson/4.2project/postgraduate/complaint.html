@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Complaint | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Anonymous Complaint</h1>
+        <p>Submit a confidential complaint for Coordinator, Dean, COD, and Director BPS review.</p>
+      </div>
+      <nav>
+        <a href="student-dashboard.html" class="button button-secondary">Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container login-page">
+    <section class="login-card">
+      <h2>Submit your complaint</h2>
+      <p>This complaint will be anonymous to the administrative recipients and tracked for response.</p>
+      <form action="#" method="post">
+        <label for="stage">Current Stage</label>
+        <select id="stage" name="stage" required>
+          <option value="">Select current stage</option>
+          <option>Concept</option>
+          <option>Proposal</option>
+          <option>Thesis Submission</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Brief summary" required>
+
+        <label for="details">Complaint details</label>
+        <textarea id="details" name="details" rows="6" placeholder="Describe the issue or concern in detail" required></textarea>
+
+        <button type="submit" class="button">Send Complaint</button>
+      </form>
+      <p class="note">A response will be provided through your in-platform messages. Complaints must be addressed within 14 days.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+</body>
+</html>

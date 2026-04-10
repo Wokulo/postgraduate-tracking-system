@@ -1,0 +1,21 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Dependencies and build
+node_modules/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# Project documentation
+*.docx
+PostgraduateTracker_Documentation.docx

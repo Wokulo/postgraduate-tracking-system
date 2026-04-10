@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Login | Postgraduate Submissions Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Supervisor Login</h1>
+        <p>Use your supervisor credentials to access the supervisor dashboard.</p>
+      </div>
+      <nav>
+        <a href="login.html" class="button button-secondary">Back</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container login-page">
+    <section class="login-card">
+      <h2>Supervisor Sign In</h2>
+      <form id="supervisorLoginForm" action="#" method="post">
+        <label for="supervisorEmail">Email Address</label>
+        <input type="email" id="supervisorEmail" name="supervisorEmail" placeholder="supervisor@example.edu" required>
+
+        <label for="supervisorPhone">Phone Number</label>
+        <input type="tel" id="supervisorPhone" name="supervisorPhone" placeholder="+254 700 000 000" required>
+
+        <label for="supervisorPassword">Password</label>
+        <input type="password" id="supervisorPassword" name="supervisorPassword" placeholder="Enter your password" required>
+
+        <button type="submit" class="button">Login as Supervisor</button>
+      </form>
+      <p class="note">Supervisor accounts are created before student onboarding begins.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('supervisorLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'supervisor-dashboard.html';
+    });
+  </script>
+</body>
+</html>

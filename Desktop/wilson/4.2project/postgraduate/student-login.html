@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Postgraduate Submissions Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Student Login</h1>
+        <p>Use your admission number, email, phone, and password to access the student dashboard.</p>
+      </div>
+      <nav>
+        <a href="login.html" class="button button-secondary">Back</a>
+        <a href="profile-setup.html" class="button button-secondary">Profile Setup</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container login-page">
+    <section class="login-card">
+      <h2>Student Sign In</h2>
+      <form id="studentLoginForm" action="#" method="post">
+        <label for="admission">Admission Number</label>
+        <input type="text" id="admission" name="admission" placeholder="PGR2026-001" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.edu" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="button">Login as Student</button>
+      </form>
+      <p class="note">If this is your first login, you can complete your profile setup after signing in.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('studentLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'student-dashboard.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Complete your account setup</h1>
+        <p>Enter your profile details, project title, and preferred supervisor before accessing your dashboard.</p>
+      </div>
+      <nav>
+        <a href="login.html" class="button button-secondary">Back to Login</a>
+        <a href="student-dashboard.html" class="button button-secondary">Go to Student Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container login-page">
+    <section class="login-card">
+      <h2>Profile Setup</h2>
+      <form id="profileForm" action="#" method="post">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Wilson Okush" required>
+
+        <label for="admission">Admission Number</label>
+        <input type="text" id="admission" name="admission" placeholder="PGR2026-001" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.edu" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
+
+        <label for="projectTitle">Project Title</label>
+        <input type="text" id="projectTitle" name="projectTitle" placeholder="Example: Data Analytics for Climate Resilience" required>
+
+        <label for="supervisor">Preferred Supervisor</label>
+        <select id="supervisor" name="supervisor" required>
+          <option value="">Choose a supervisor</option>
+          <option>Professor Okello — Dean</option>
+          <option>Dr. Prisca Magotu — Chair of Department</option>
+          <option>Prof. Miner Titus</option>
+          <option>Dr. Joseph Nyakinda</option>
+          <option>Dr. Willy Kangogo — Coordinator</option>
+          <option>Dr. Julius Owino</option>
+          <option>Dr. Francis Akwenda Odhiambo — Director BPS</option>
+          <option>Any Other</option>
+        </select>
+
+        <button type="submit" class="button">Save Profile</button>
+      </form>
+      <p class="note">You can edit your project title and contact details later from your dashboard.</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'student-dashboard.html';
+    });
+  </script>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+</body>
+</html>
