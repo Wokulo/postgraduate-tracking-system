@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage Approvals | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Stage Approvals</h1>
+        <p>Review student submissions and approve stage completion to enable progression.</p>
+      </div>
+      <nav>
+        <a href="supervisor-dashboard.html" class="button button-secondary">Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="approval-summary">
+      <div class="summary-card">
+        <h4>Pending Approvals</h4>
+        <p class="summary-number">3</p>
+      </div>
+      <div class="summary-card">
+        <h4>Approved This Month</h4>
+        <p class="summary-number">8</p>
+      </div>
+      <div class="summary-card">
+        <h4>Awaiting Revision</h4>
+        <p class="summary-number">2</p>
+      </div>
+    </section>
+
+    <section class="approval-filters">
+      <button class="filter-btn active" onclick="filterApprovals('all')">All (7)</button>
+      <button class="filter-btn" onclick="filterApprovals('pending')">Pending (3)</button>
+      <button class="filter-btn" onclick="filterApprovals('concept')">Concept Stage</button>
+      <button class="filter-btn" onclick="filterApprovals('proposal')">Proposal Stage</button>
+      <button class="filter-btn" onclick="filterApprovals('revision')">Needs Revision (2)</button>
+    </section>
+
+    <section class="approval-list">
+      <div class="approval-request pending-approval">
+        <div class="approval-header">
+          <div class="student-info">
+            <h4>Jane Okumu Okoth</h4>
+            <p class="student-id">Admission: PGR2026-001</p>
+            <p class="project-title">Data Analytics for Climate Resilience</p>
+          </div>
+          <div class="stage-info">
+            <span class="stage-badge proposal">Proposal Stage</span>
+            <span class="status-badge pending">Pending Review</span>
+          </div>
+        </div>
+
+        <div class="approval-content">
+          <h5>Submitted Documents</h5>
+          <div class="documents-checklist">
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Minutes of Presentation</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Fee Statement Balance</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Proposal Document</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+          </div>
+
+          <h5 style="margin-top: 1.5rem;">Supervisor Feedback</h5>
+          <textarea id="feedback1" placeholder="Add your feedback or comments for the student..." rows="4"></textarea>
+
+          <h5 style="margin-top: 1.5rem;">Decision</h5>
+          <div class="approval-actions">
+            <button class="button button-approve">✓ Approve Stage Completion</button>
+            <button class="button button-revision">⚠ Request for Revision</button>
+            <button class="button button-reject">✕ Reject Submission</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="approval-request pending-approval">
+        <div class="approval-header">
+          <div class="student-info">
+            <h4>Wilson Kipchoge Omondi</h4>
+            <p class="student-id">Admission: PGR2026-008</p>
+            <p class="project-title">Machine Learning Applications in Agriculture</p>
+          </div>
+          <div class="stage-info">
+            <span class="stage-badge concept">Concept Stage</span>
+            <span class="status-badge pending">Pending Review</span>
+          </div>
+        </div>
+
+        <div class="approval-content">
+          <h5>Submitted Documents</h5>
+          <div class="documents-checklist">
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Minutes of Presentation</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Fee Statement Balance</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Academic Transcript</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+          </div>
+
+          <h5 style="margin-top: 1.5rem;">Supervisor Feedback</h5>
+          <textarea id="feedback2" placeholder="Add your feedback or comments for the student..." rows="4"></textarea>
+
+          <h5 style="margin-top: 1.5rem;">Decision</h5>
+          <div class="approval-actions">
+            <button class="button button-approve">✓ Approve Stage Completion</button>
+            <button class="button button-revision">⚠ Request for Revision</button>
+            <button class="button button-reject">✕ Reject Submission</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="approval-request pending-approval">
+        <div class="approval-header">
+          <div class="student-info">
+            <h4>Amara Hassan Mohamed</h4>
+            <p class="student-id">Admission: PGR2026-012</p>
+            <p class="project-title">Renewable Energy Systems in East Africa</p>
+          </div>
+          <div class="stage-info">
+            <span class="stage-badge thesis">Thesis Stage</span>
+            <span class="status-badge pending">Pending Review</span>
+          </div>
+        </div>
+
+        <div class="approval-content">
+          <h5>Submitted Documents</h5>
+          <div class="documents-checklist">
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Thesis Document</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Intent to Submit Form</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+            <div class="checklist-item checked">
+              <input type="checkbox" checked disabled>
+              <label>Fee Statement</label>
+              <a href="#" class="link-small">Download</a>
+            </div>
+          </div>
+
+          <h5 style="margin-top: 1.5rem;">Supervisor Feedback</h5>
+          <textarea id="feedback3" placeholder="Add your feedback or comments for the student..." rows="4"></textarea>
+
+          <h5 style="margin-top: 1.5rem;">Decision</h5>
+          <div class="approval-actions">
+            <button class="button button-approve">✓ Approve Stage Completion</button>
+            <button class="button button-revision">⚠ Request for Revision</button>
+            <button class="button button-reject">✕ Reject Submission</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="approval-request approved">
+        <div class="approval-header">
+          <div class="student-info">
+            <h4>Koech Kiplagat Kimani</h4>
+            <p class="student-id">Admission: PGR2026-005</p>
+            <p class="project-title">Cloud Computing Infrastructure Security</p>
+          </div>
+          <div class="stage-info">
+            <span class="stage-badge proposal">Proposal Stage</span>
+            <span class="status-badge approved">✓ Approved</span>
+          </div>
+        </div>
+
+        <div class="approval-content approval-closed">
+          <p class="approval-summary-text">Approved on <strong>April 8, 2026 at 2:30 PM</strong></p>
+          <p class="approval-feedback">Feedback: Excellent proposal with clear methodology and objectives. Ready to proceed to Thesis stage.</p>
+        </div>
+      </div>
+
+      <div class="approval-request revision-needed">
+        <div class="approval-header">
+          <div class="student-info">
+            <h4>Sarah Kipchirchir Kipchoge</h4>
+            <p class="student-id">Admission: PGR2026-014</p>
+            <p class="project-title">Sustainable Water Management Systems</p>
+          </div>
+          <div class="stage-info">
+            <span class="stage-badge concept">Concept Stage</span>
+            <span class="status-badge revision">⚠ Revision Requested</span>
+          </div>
+        </div>
+
+        <div class="approval-content approval-closed">
+          <p class="approval-summary-text">Revision requested on <strong>April 5, 2026 at 10:15 AM</strong></p>
+          <p class="approval-feedback">Feedback: The literature review needs expansion. Please include more recent studies from 2024-2026 and clarify the research gap more explicitly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterApprovals(type) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      console.log('Filter by:', type);
+    }
+
+    // Add event listeners to approval buttons
+    document.querySelectorAll('.button-approve').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const textarea = this.parentElement.previousElementSibling;
+        if (textarea.value.trim() === '') {
+          alert('Please add feedback before approving');
+          return;
+        }
+        alert('Stage approved! Student will be notified and can proceed to next stage.');
+        location.reload();
+      });
+    });
+
+    document.querySelectorAll('.button-revision').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const textarea = this.parentElement.previousElementSibling;
+        if (textarea.value.trim() === '') {
+          alert('Please add feedback explaining what needs revision');
+          return;
+        }
+        alert('Revision request sent to student. They will address your feedback.');
+        location.reload();
+      });
+    });
+
+    document.querySelectorAll('.button-reject').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const textarea = this.parentElement.previousElementSibling;
+        if (textarea.value.trim() === '') {
+          alert('Please add feedback explaining why the submission is rejected');
+          return;
+        }
+        if (confirm('Are you sure you want to reject this submission? The student will need to resubmit.')) {
+          alert('Submission rejected. Student will be notified.');
+          location.reload();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
