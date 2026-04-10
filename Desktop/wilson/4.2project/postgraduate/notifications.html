@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Notifications & Messages</h1>
+        <p>View deadline reminders, supervisor feedback, activity updates, and complaint responses.</p>
+      </div>
+      <nav>
+        <a href="student-dashboard.html" class="button button-secondary">Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notifications-layout">
+      <aside class="notification-filters">
+        <h3>Filters</h3>
+        <button class="filter-tab active" onclick="filterNotifications('all')">All Messages (12)</button>
+        <button class="filter-tab" onclick="filterNotifications('unread')">Unread (5)</button>
+        <button class="filter-tab" onclick="filterNotifications('deadline')">Deadline Reminders (3)</button>
+        <button class="filter-tab" onclick="filterNotifications('feedback')">Feedback (4)</button>
+        <button class="filter-tab" onclick="filterNotifications('response')">Complaint Responses (1)</button>
+        <button class="filter-tab" onclick="filterNotifications('activity')">Activity Updates (4)</button>
+        <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border);">
+        <button class="button button-secondary" style="width: 100%;" onclick="markAllRead()">Mark All as Read</button>
+      </aside>
+
+      <section class="notifications-content">
+        <div class="notification-card unread">
+          <div class="notification-header">
+            <span class="notification-badge deadline">Deadline Reminder</span>
+            <span class="notification-time">2 hours ago</span>
+          </div>
+          <h4>Submit Draft Proposal Due Today at 5:00 PM</h4>
+          <p>Your proposal document submission deadline is today. Please ensure all required documents are uploaded before the deadline.</p>
+          <div class="notification-actions">
+            <a href="document-upload.html" class="button button-small">Upload Document</a>
+            <button class="button-small button-text" onclick="markAsRead(this)">Mark as Read</button>
+          </div>
+        </div>
+
+        <div class="notification-card unread">
+          <div class="notification-header">
+            <span class="notification-badge feedback">Supervisor Feedback</span>
+            <span class="notification-time">4 hours ago</span>
+          </div>
+          <h4>Feedback on Literature Review</h4>
+          <p>Dr. Prisca Magotu has reviewed your literature review and provided feedback. Please check the attached comments for detailed suggestions on improvement.</p>
+          <div class="notification-actions">
+            <a href="#" class="button button-small">View Feedback</a>
+            <button class="button-small button-text" onclick="markAsRead(this)">Mark as Read</button>
+          </div>
+        </div>
+
+        <div class="notification-card unread">
+          <div class="notification-header">
+            <span class="notification-badge activity">Activity Update</span>
+            <span class="notification-time">1 day ago</span>
+          </div>
+          <h4>Research Methodology Review Scheduled</h4>
+          <p>Your supervisor has scheduled a research methodology review meeting for April 22, 2026 at 10:00 AM. Please prepare your methodology slides.</p>
+          <div class="notification-actions">
+            <a href="activity-calendar.html" class="button button-small">View Calendar</a>
+            <button class="button-small button-text" onclick="markAsRead(this)">Mark as Read</button>
+          </div>
+        </div>
+
+        <div class="notification-card unread">
+          <div class="notification-header">
+            <span class="notification-badge response">Complaint Response</span>
+            <span class="notification-time">1 day ago</span>
+          </div>
+          <h4>Response to Your Complaint (ID: #CNK-2026-001)</h4>
+          <p>Your complaint has been reviewed and a response has been provided. Please check your messages for the full resolution details.</p>
+          <div class="notification-actions">
+            <button class="button button-small">View Response</button>
+            <button class="button-small button-text" onclick="markAsRead(this)">Mark as Read</button>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notification-header">
+            <span class="notification-badge activity">Activity Update</span>
+            <span class="notification-time">2 days ago</span>
+          </div>
+          <h4>Literature Search Strategy Complete</h4>
+          <p>Your activity "Literature Search Strategy" has been marked as complete. Great progress on your research!</p>
+          <div class="notification-actions">
+            <button class="button-small button-text">Already Read</button>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notification-header">
+            <span class="notification-badge feedback">Supervisor Feedback</span>
+            <span class="notification-time">3 days ago</span>
+          </div>
+          <h4>Initial Concept Paper Review Complete</h4>
+          <p>Dr. Prisca Magotu has completed the review of your concept paper. The feedback is positive with minor revisions requested. Please meet to discuss next steps.</p>
+          <div class="notification-actions">
+            <a href="#" class="button button-small">View Feedback</a>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notification-header">
+            <span class="notification-badge deadline">Deadline Reminder</span>
+            <span class="notification-time">5 days ago</span>
+          </div>
+          <h4>Minutes of Presentation Upload Deadline</h4>
+          <p>Reminder: Minutes of the Concept stage presentation must be uploaded within 7 days. Current stage requires this document.</p>
+          <div class="notification-actions">
+            <a href="document-upload.html" class="button button-small">Upload Now</a>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notification-header">
+            <span class="notification-badge activity">Activity Update</span>
+            <span class="notification-time">1 week ago</span>
+          </div>
+          <h4>Initial Feedback Meeting Scheduled</h4>
+          <p>Your supervisor has scheduled the initial feedback meeting for April 1, 2026 at 9:00 AM. This will cover your concept paper and initial research directions.</p>
+          <div class="notification-actions">
+            <a href="activity-calendar.html" class="button button-small">View Calendar</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterNotifications(type) {
+      // Update active filter tab
+      document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter logic would be implemented here
+      console.log('Filter by:', type);
+    }
+
+    function markAsRead(button) {
+      const card = button.closest('.notification-card');
+      card.classList.remove('unread');
+      button.textContent = 'Marked as Read';
+      button.disabled = true;
+    }
+
+    function markAllRead() {
+      document.querySelectorAll('.notification-card.unread').forEach(card => {
+        card.classList.remove('unread');
+      });
+      alert('All notifications marked as read');
+    }
+  </script>
+</body>
+</html>
