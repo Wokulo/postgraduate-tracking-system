@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Postgraduate Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Full platform monitoring for Director, Dean, COD, and Coordinator roles.</p>
+      </div>
+      <nav>
+        <a href="index.html" class="button button-secondary">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="admin-stats">
+      <div class="stat-card">
+        <h4>Total Students</h4>
+        <p class="stat-number">47</p>
+        <p class="stat-detail">8 new this semester</p>
+      </div>
+      <div class="stat-card">
+        <h4>Active Supervisors</h4>
+        <p class="stat-number">12</p>
+        <p class="stat-detail">All assigned</p>
+      </div>
+      <div class="stat-card">
+        <h4>Concept Stage</h4>
+        <p class="stat-number">18</p>
+        <p class="stat-detail">9 pending approval</p>
+      </div>
+      <div class="stat-card">
+        <h4>Proposal Stage</h4>
+        <p class="stat-number">16</p>
+        <p class="stat-detail">4 pending approval</p>
+      </div>
+      <div class="stat-card">
+        <h4>Thesis Submission</h4>
+        <p class="stat-number">13</p>
+        <p class="stat-detail">2 in review</p>
+      </div>
+      <div class="stat-card">
+        <h4>Pending Complaints</h4>
+        <p class="stat-number">3</p>
+        <p class="stat-detail">All < 7 days old</p>
+      </div>
+    </section>
+
+    <section class="admin-content">
+      <div class="admin-section">
+        <h3>Student Progress Overview</h3>
+        <div class="progress-chart">
+          <div class="progress-bar-item">
+            <div class="progress-label">
+              <span>Concept Stage Completion</span>
+              <span>65%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 65%"></div>
+            </div>
+          </div>
+          <div class="progress-bar-item">
+            <div class="progress-label">
+              <span>Proposal Stage Completion</span>
+              <span>48%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 48%"></div>
+            </div>
+          </div>
+          <div class="progress-bar-item">
+            <div class="progress-label">
+              <span>Thesis Completion Rate</span>
+              <span>35%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 35%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Pending Actions</h3>
+        <div class="pending-actions-list">
+          <div class="pending-item">
+            <div class="pending-header">
+              <span class="badge pending">9</span>
+              <h5>Stage Approvals Pending</h5>
+            </div>
+            <p>Concept stage submissions awaiting supervisor approval</p>
+            <a href="stage-approvals.html" class="link-small">Review approvals →</a>
+          </div>
+          <div class="pending-item">
+            <div class="pending-header">
+              <span class="badge warning">3</span>
+              <h5>Complaints Requiring Response</h5>
+            </div>
+            <p>Student complaints submitted within last 14 days</p>
+            <a href="#" class="link-small">View complaints →</a>
+          </div>
+          <div class="pending-item">
+            <div class="pending-header">
+              <span class="badge info">14</span>
+              <h5>User Accounts Inactive</h5>
+            </div>
+            <p>Students and supervisors with no login in past 30 days</p>
+            <a href="#" class="link-small">View inactive users →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Supervisor Activity</h3>
+        <div class="supervisor-list">
+          <div class="supervisor-item">
+            <div class="supervisor-header">
+              <h5>Dr. Prisca Magotu — Chair of Department</h5>
+              <span class="status-badge active">Active</span>
+            </div>
+            <div class="supervisor-stats">
+              <div>
+                <p class="label">Assigned Students</p>
+                <p class="value">12</p>
+              </div>
+              <div>
+                <p class="label">Approvals Given</p>
+                <p class="value">8</p>
+              </div>
+              <div>
+                <p class="label">Last Login</p>
+                <p class="value">Today, 2:15 PM</p>
+              </div>
+              <div>
+                <p class="label">Pending Reviews</p>
+                <p class="value">3</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="supervisor-item">
+            <div class="supervisor-header">
+              <h5>Dr. Willy Kangojo — Coordinator</h5>
+              <span class="status-badge active">Active</span>
+            </div>
+            <div class="supervisor-stats">
+              <div>
+                <p class="label">Assigned Students</p>
+                <p class="value">14</p>
+              </div>
+              <div>
+                <p class="label">Approvals Given</p>
+                <p class="value">6</p>
+              </div>
+              <div>
+                <p class="label">Last Login</p>
+                <p class="value">Yesterday, 4:30 PM</p>
+              </div>
+              <div>
+                <p class="label">Pending Reviews</p>
+                <p class="value">5</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="supervisor-item">
+            <div class="supervisor-header">
+              <h5>Prof. Miner Titus</h5>
+              <span class="status-badge inactive">Inactive</span>
+            </div>
+            <div class="supervisor-stats">
+              <div>
+                <p class="label">Assigned Students</p>
+                <p class="value">8</p>
+              </div>
+              <div>
+                <p class="label">Approvals Given</p>
+                <p class="value">3</p>
+              </div>
+              <div>
+                <p class="label">Last Login</p>
+                <p class="value">7 days ago</p>
+              </div>
+              <div>
+                <p class="label">Pending Reviews</p>
+                <p class="value">4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Recent Complaints & Issues</h3>
+        <div class="complaints-table">
+          <div class="table-header">
+            <div class="col-id">ID</div>
+            <div class="col-stage">Stage</div>
+            <div class="col-date">Submitted</div>
+            <div class="col-status">Status</div>
+            <div class="col-action">Action</div>
+          </div>
+
+          <div class="table-row">
+            <div class="col-id">#CNK-2026-012</div>
+            <div class="col-stage">Proposal</div>
+            <div class="col-date">April 9, 2026</div>
+            <div class="col-status"><span class="badge-status pending">Pending</span></div>
+            <div class="col-action">
+              <a href="#" class="link-small">Respond</a>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="col-id">#CNK-2026-011</div>
+            <div class="col-stage">Concept</div>
+            <div class="col-date">April 7, 2026</div>
+            <div class="col-status"><span class="badge-status pending">Pending</span></div>
+            <div class="col-action">
+              <a href="#" class="link-small">Respond</a>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="col-id">#CNK-2026-010</div>
+            <div class="col-stage">Thesis</div>
+            <div class="col-date">April 5, 2026</div>
+            <div class="col-status"><span class="badge-status resolved">Resolved</span></div>
+            <div class="col-action">
+              <a href="#" class="link-small">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section">
+        <h3>System Activity & Audit Log</h3>
+        <div class="activity-log">
+          <div class="log-entry">
+            <div class="log-time">Today, 3:45 PM</div>
+            <div class="log-action">
+              <p class="log-desc"><strong>Jane Okumu</strong> (Student) uploaded <strong>Proposal Document</strong></p>
+              <p class="log-detail">Stage: Proposal | Document type: PDF | Size: 2.3 MB</p>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-time">Today, 2:30 PM</div>
+            <div class="log-action">
+              <p class="log-desc"><strong>Dr. Prisca Magotu</strong> (Supervisor) <strong>approved</strong> stage completion</p>
+              <p class="log-detail">Student: Koech Kiplagat | Stage: Proposal | Status: Approved</p>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-time">Today, 1:15 PM</div>
+            <div class="log-action">
+              <p class="log-desc"><strong>Wilson Omondi</strong> (Student) submitted complaint</p>
+              <p class="log-detail">Complaint ID: #CNK-2026-012 | Stage: Proposal</p>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-time">Yesterday, 4:45 PM</div>
+            <div class="log-action">
+              <p class="log-desc"><strong>Dr. Willy Kangojo</strong> (Coordinator) assigned supervisor</p>
+              <p class="log-detail">Student: Amara Hassan | Supervisor: Dr. Joseph Nyakinda</p>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-time">Yesterday, 2:30 PM</div>
+            <div class="log-action">
+              <p class="log-desc"><strong>System</strong> sent deadline reminder notifications</p>
+              <p class="log-detail">Recipients: 8 students | Deadline: Proposal submission</p>
+            </div>
+          </div>
+
+          <a href="#" class="link-small" style="display: inline-block; margin-top: 1rem;">View full audit log →</a>
+        </div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Quick Admin Tools</h3>
+        <div class="admin-tools">
+          <a href="#" class="admin-tool-card">
+            <h5>📊 Generate Reports</h5>
+            <p>Create comprehensive reports by date range and filters</p>
+          </a>
+          <a href="#" class="admin-tool-card">
+            <h5>📋 View All Students</h5>
+            <p>Browse complete student list with progress status</p>
+          </a>
+          <a href="#" class="admin-tool-card">
+            <h5>👥 Manage Supervisors</h5>
+            <p>Assign supervisors and view assignments</p>
+          </a>
+          <a href="#" class="admin-tool-card">
+            <h5>🔐 Access Controls</h5>
+            <p>Manage user roles and permissions</p>
+          </a>
+          <a href="#" class="admin-tool-card">
+            <h5>📧 Manage Notifications</h5>
+            <p>Configure automated alerts and reminders</p>
+          </a>
+          <a href="#" class="admin-tool-card">
+            <h5>⚙️ System Settings</h5>
+            <p>Configure platform settings and integrations</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Postgraduate Submissions Tracker • Department of Pure and Applied Mathematics</p>
+    </div>
+  </footer>
+
+  <script>
+    // Admin dashboard interactivity could be added here
+    console.log('Admin Dashboard loaded');
+  </script>
+</body>
+</html>
