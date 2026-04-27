@@ -2,6 +2,20 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+export async function register(req, res) {
+  const { full_name, email, password, role } = req.body;
+  const password_hash = await bcrypt.hash(password, 10);
+
+  const result = await query(
+    `INSERT INTO users (full_name, email, password_hash, role)
+     VALUES ($1, $2, $3, $4)
+     RETURNING id, full_name, email, role, created_at`,
+    [full_name, email, password_hash, role]
+  );
+
+  return res.status(201).json(result.rows[0]);
+}
+
 export async function login(req, res) {
   const { email, password } = req.body;
 

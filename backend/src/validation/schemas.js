@@ -19,6 +19,16 @@ const studentBase = {
 };
 
 export const authSchemas = {
+  register: z.object({
+    body: z.object({
+      full_name: z.string().trim().min(2).max(120),
+      email: z.string().trim().email().max(150),
+      password: z.string().min(6).max(120),
+      role: z.enum(["admin", "teacher"]),
+    }),
+    params: z.object({}),
+    query: z.object({}),
+  }),
   login: z.object({
     body: z.object({
       email: z.string().trim().email(),
